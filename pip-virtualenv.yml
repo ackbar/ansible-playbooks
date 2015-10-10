@@ -1,0 +1,9 @@
+---
+- hosts: alderaan-new
+  tasks:
+  - name: Install python-pip package
+    apt: name=python-pip state=present update_cache=yes
+  - name: Install python-virtualenv package
+    apt: name=python-virtualenv state=present
+  - name: Install python-dev package
+    apt: name=python-dev state=present
