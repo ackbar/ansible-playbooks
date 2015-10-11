@@ -1,9 +1,9 @@
 [hosts]
-alderaan.mingbai.org:2222
-tatooine.mingbai.org:2222
-endor.mingbai.org:2222
-coruscant.mingbai.org:2222
-alderaan-new:22
+endor:2222
+coruscant:2222
+tatooine:2222
+alderaan:2222
+alderaan-new:2222
 nas
 hoth
 
@@ -27,6 +27,10 @@ ns2
 smtp2
 syslog2
 
+[lxc-alderaan-new]
+test
+
 [lxc:children]
 lxc-alderaan
 lxc-tatooine
+lxc-alderaan-new
