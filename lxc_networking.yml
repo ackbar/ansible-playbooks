@@ -1,0 +1,10 @@
+---
+- hosts: test
+  tasks:
+    - name: define /etc/network/interfaces file
+      template: src=templates/interfaces.j2 dest=/etc/network/interfaces owner=root group=root mode=0644
+      notify: 
+        - restart network
+  handlers:
+    - name: restart network
+      shell: service networking restart

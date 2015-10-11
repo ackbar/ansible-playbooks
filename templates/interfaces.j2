@@ -1,0 +1,12 @@
+# {{ ansible_managed }}
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+iface eth0 inet static
+    address   {{ ansible_default_ipv4.address }}
+    network   {{ ansible_default_ipv4.network }}
+    netmask   {{ ansible_default_ipv4.netmask }}

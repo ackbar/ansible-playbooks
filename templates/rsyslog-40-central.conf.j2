@@ -1,0 +1,6 @@
+# {{ ansible_managed }}
+$ActionQueueType LinkedList
+$ActionQueueFilename srvrfwd
+$ActionResumeRetryCount -1
+$ActionQueueSaveOnShutdown on
+*.*     @@{{ syslog_server }}:10514

@@ -1,0 +1,13 @@
+---
+- hosts: alderaan-new
+  remote_user: ansible
+  tasks:
+  - name: Install python environment packages
+    apt:
+      name: "{{ item }}"
+      state: present
+      update_cache: yes
+    with_items:
+      - python-pip
+      - python-virtualenv
+      - python-dev

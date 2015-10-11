@@ -1,0 +1,5 @@
+---
+- hosts: 
+server
+clients
+fichiers avec template

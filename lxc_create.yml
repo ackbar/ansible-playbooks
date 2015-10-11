@@ -1,0 +1,33 @@
+---
+- hosts: alderaan-new
+  remote_user: ansible
+  vars:
+    lxc_name: '{{ name | mandatory }}'
+    lxc_fs_size: '{{ size | mandatory }}'
+    lxc_ipv4: '{{ ipv4 | mandatory }}'
+
+  tasks:
+  - name: install lxc-dev and gcc
+    apt:
+      name: "{{ item }}"
+      state: present
+  with_items:
+    - gcc
+    - lxc-dev
+  - name: install lxc-python2
+    pip: name=lxc-python2 state=present
+  - name: Create new LXC container
+    lxc_container:
+      backing_store: lvm
+      container_log: True
+      fs_size: "{{ lxc_fs_size }}"
+      fs_type: ext4
+      lv_name: "lv_{{ lxc_name }}"
+      name: "{{ lxc_name }}"
+      thinpool: tp_lxc
+      vg_name: vg_alderaan
+      container_config: 
+        - "lxc.cap.drop = mac_admin mac_override mknod setfcap setpcap sys_admin sys_boot sys_module sys_nice sys_pacct sys_ptrace sys_rawio sys_resource sys_time"
+        - "lxc.network.ipv4 = {{ lxc_ipv4 }}/24"
+        - "lxc.network.ipv4.gateway = 172.30.21.1"
+#        - "lxc.cap.drop = audit_control audit_write mac_admin mac_override mknod setfcap setpcap sys_admin sys_boot sys_module sys_nice sys_pacct sys_ptrace sys_rawio sys_resource sys_time"

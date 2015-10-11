@@ -1,0 +1,5 @@
+---
+- hosts: test
+  tasks:
+    - name: Suppression de l'utilisateur ubuntu préinstallé
+      user: name=ubuntu state=absent remove=yes

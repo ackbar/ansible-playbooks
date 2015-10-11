@@ -1,0 +1,3 @@
+ansible_ssh_host: alderaan
+nameserver: 172.30.21.24
+ubuntu_mirror: mirrors.online.net

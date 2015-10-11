@@ -1,0 +1,39 @@
+---
+- hosts: test
+
+  tasks:
+  - name: install python-minimal
+    apt: state=present name=python-minimal
+  - name: minimize lxc installation
+    apt:
+      state: absent
+      purge: yes
+      name: "{{ item }}"
+    with_items:
+      - console-setup
+      - dmsetup
+      - ssh
+      - openssh-client
+      - openssh-server
+      - openssh-sftp-server
+      - ntpdate
+      - vim-tiny
+      - xkb-data
+      - isc-dhcp-client
+      - isc-dhcp-common
+      - eject
+      - kbd
+      - keyboard-configuration
+      - language-pack-en
+      - language-pack-en-base
+      - whiptail
+      - libck-connector0
+      - libedit2
+      - libgssapi-krb5-2
+      - libnewt0.52
+      - libwrap0
+      - libfribidi0
+      - libkrb5-3
+      - libk5crypto3
+      - libkeyutils1
+      - libkrb5support0
