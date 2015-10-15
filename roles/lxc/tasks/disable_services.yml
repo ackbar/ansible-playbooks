@@ -1,0 +1,10 @@
+- name: "[LXC] Stop and disable unused services"
+  service: name="{{item}}" state=stopped enabled=no
+  with_items:
+    - umountnfs.sh
+    - ondemand
+    - networking
+    - umountfs
+    - umountroot
+    - mountall
+    - plymouth

@@ -1,0 +1,3 @@
+- include: remove_packages.yml
+- include: disable_services.yml
+- include: remove_ubuntu_user.yml
