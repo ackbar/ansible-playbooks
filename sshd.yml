@@ -1,9 +1,0 @@
----
-- hosts: hosts
-  
-  tasks:
-    - name: 
-# génération des clés
-# suppression des clés inutiles
-# paramétrage : PermitRootLogin / Port / Protocol / UsePrivilegeSeparation / X11Forwarding / AllowGroup
-

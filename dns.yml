@@ -1,5 +1,0 @@
----
-- hosts: all
-  tasks:
-    - name: "set nameserver in resolv.conf file"
-      template: src=templates/resolv.conf.j2 dest=/etc/resolv.conf mode=0644 owner=root group=root
