@@ -1,3 +1,4 @@
 - include: disable_recommended_packages.yml
 - include: set_ubuntu_mirror.yml
 - include: set_hosts.yml
+- include: set_hostname.yml
