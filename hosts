@@ -8,14 +8,14 @@ nas
 hoth
 
 [lxc-alderaan]
-apt1
+#apt1
 db
 horde
 mail
 ns1
 proxy
 smtp1
-syslog1
+#syslog1
 www
 
 [lxc-tatooine]
@@ -28,7 +28,10 @@ smtp2
 syslog2
 
 [lxc-alderaan-new]
+apt1
+syslog1
 test
+test2
 
 [lxc:children]
 lxc-alderaan
