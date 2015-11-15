@@ -1,2 +1,3 @@
 ansible_ssh_host: alderaan-new
 ubuntu_mirror: mirrors.online.net
+local_subnet: 172.30.21
