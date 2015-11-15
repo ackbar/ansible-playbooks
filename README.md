@@ -1,5 +1,4 @@
 # ansible-playbooks
-
 These ansible playbooks are meant to be used for deployment of LXC containers on a remote host. The [ansible-lxc-remote](https://github.com/ackbar/ansible-playbook) plugin is needed to pass commands to the containers, which allows to not configure any SSH daemon inside those.
 
 The host can run any Linux distribution as long as the kernel is recent enough for some LXC/namespaces features (3.18+) and as long as the lxc userland tools are at least at version 1.0. However, the current version of the playbooks assume the host to be running a Debian-like distribution and depends on apt for packages installation. The containers will use Ubuntu 14.04 LTS.
