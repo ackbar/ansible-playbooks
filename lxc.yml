@@ -1,0 +1,4 @@
+- hosts: lxc
+  roles:
+    - common
+    - lxc
